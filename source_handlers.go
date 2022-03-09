@@ -426,7 +426,7 @@ func SourceResume(c echo.Context) error {
 		return err
 	}
 
-	err = sourceDao.Resume(sourceId)
+	err = sourceDao.Unpause(sourceId)
 	if err != nil {
 		return util.NewErrBadRequest(err)
 	}
