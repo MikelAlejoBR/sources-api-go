@@ -431,7 +431,7 @@ func TestAuthenticationEdit(t *testing.T) {
 	backupNotificationProducer := service.NotificationProducer
 	service.NotificationProducer = &mocks.MockAvailabilityStatusNotificationProducer{}
 
-	newAvailabilityStatus := "new status"
+	newAvailabilityStatus := m.Unavailable
 
 	requestBody := m.AuthenticationEditRequest{
 		AvailabilityStatus: &newAvailabilityStatus,
@@ -504,7 +504,7 @@ func TestAuthenticationEdit(t *testing.T) {
 }
 
 func TestAuthenticationEditNotFound(t *testing.T) {
-	newAvailabilityStatus := "new status"
+	newAvailabilityStatus := m.Available
 
 	requestBody := m.AuthenticationEditRequest{
 		AvailabilityStatus: &newAvailabilityStatus,
